@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('index') }}">Recipe Finder</a></h1>
+        <form action="{{ url_for('search') }}" method="get">
+            <input type="text" name="query" placeholder="Search by ingredient or name..." value="{{ request.args.get('query', '') }}">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">All Recipes</a></li>
+            {% for category in categories %}
+            <li><a href="{{ url_for('category', category_name=category) }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Recipe Website</p>
+    </footer>
+</body>
+</html>
