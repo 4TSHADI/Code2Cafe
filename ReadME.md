@@ -62,26 +62,3 @@ A simple web application for browsing and searching recipes. Built with Flask fo
 2. **Add Sample Data**:
    To add sample recipes to the database, run the following code in the Python shell or use the provided script:
    ```python
-   from app import app, db
-   from models import Recipe
-
-   with app.app_context():
-       # Recipe 1
-       recipe1 = Recipe(
-           name='Classic Pancakes',
-           ingredients='1 1/2 cups all-purpose flour\n3 1/2 teaspoons baking powder\n1 teaspoon salt\n1 tablespoon white sugar\n1 1/4 cups milk\n1 egg\n3 tablespoons butter, melted',
-           instructions='In a large bowl, sift together the flour, baking powder, salt and sugar...\n',
-           categories='Breakfast, Vegetarian'
-       )
-       db.session.add(recipe1)
-
-       # Recipe 2
-       recipe2 = Recipe(
-           name='Chicken Stir Fry',
-           ingredients='1 pound chicken breast\n2 cups mixed vegetables\n2 tablespoons soy sauce\n1 tablespoon olive oil',
-           instructions='Heat oil in a large skillet over medium-high heat...\n',
-           categories='Dinner, Asian'
-       )
-       db.session.add(recipe2)
-
-       db.session.commit()

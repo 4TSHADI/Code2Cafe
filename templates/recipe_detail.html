@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.name }} - Recipe Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ recipe.name }}</h1>
+        </header>
+
+        <!-- Main Image -->
+        <div class="main-image">
+            <img src="{{ recipe.main_image }}" alt="{{ recipe.name }}">
+        </div>
+
+        <!-- Recipe Description -->
+        <section class="description">
+            <p><strong>Description:</strong> {{ recipe.description }}</p>
+        </section>
+
+        <!-- Recipe Timing and Yield -->
+        <section class="timing">
+            <p><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
+            <p><strong>Cook Time:</strong> {{ recipe.cook_time }}</p>
+            <p><strong>Total Time:</strong> {{ recipe.total_time }}</p>
+            <p><strong>Yield:</strong> {{ recipe.yield_ }}</p>
+        </section>
+
+        <!-- Ingredients -->
+        <section class="ingredients">
+            <h2>Ingredients</h2>
